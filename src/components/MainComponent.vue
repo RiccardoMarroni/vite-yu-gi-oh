@@ -1,25 +1,37 @@
 <template>
-    <main class="container">
+  <main class="container">
+    <section class="container">
+      <SelectArchetype />
+    </section>
+    <section class="container">
       <CardList />
-    </main>
-  </template>
-  
-  <script>
-  import CardList from "./CardList.vue";
-  export default {
-    name: "MainComponent",
-    components: {
-      CardList,
-    },
-  };
-  </script>
-  
-  <style lang="scss" scoped>
-  @use "../assets/styles/partials/variables" as *;
-  
-  main {
-    background-color: $thirdcolor;
-    margin-top: 30px;
-    padding: 0;
+    </section>
+  </main>
+</template>
+
+<script>
+import CardList from "./CardList.vue";
+import SelectArchetype from "./Searcher.vue";
+export default {
+  name: "MainComponent",
+  components: {
+    CardList,
+    SelectArchetype
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+@use "../assets/styles/partials/variables" as *;
+
+section {
+  background-color: $thirdcolor;
+  margin-top: 30px;
+  padding: 0;
+  &:first-child {
+    width: 250px;
+    background-color: transparent;
+    margin-left: 0;
   }
-  </style>
+}
+</style>
