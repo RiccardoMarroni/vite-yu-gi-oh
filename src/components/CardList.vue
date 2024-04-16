@@ -20,7 +20,7 @@
   </template>
   
   <script>
-   import { storage } from "./data/storage.js";
+   import { storage } from "./data/storage.js";     //non legge l'import
   import CardComponent from "./CardComponent.vue";
   export default {
     name: "CardList",
