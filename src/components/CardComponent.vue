@@ -1,26 +1,40 @@
 <template>
-    <div class="card">
-      <img src="..." class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the bulk
-          of the card's content.
-        </p>
-        
-      </div>
+  <div class="card d-flex flex-column h-100">
+    <img :src="image" :alt="name" />
+    <div class="content h-100 d-flex flex-column justify-content-between">
+      <h5 class="text-center">{{ name }}</h5>
+      <p class="text-center">{{ archetype }}</p>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    name: "CardComponent",
-    // data() {
-    //   return {};
-    // },
-  };
-  </script>
-  
-  <style lang="scss" scoped>
-  
-  </style>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "CardComponent",
+  props: ["id", "image", "name", "archetype"],
+};
+</script>
+
+<style lang="scss" scoped>
+@use "../assets/styles/partials/variables" as *;
+
+.card {
+  background-color: $primarycolor;
+  border: 0;
+  border-radius: 0;
+  .content {
+    padding: 10px 0;
+    h5 {
+      color: $thirdcolor;
+      margin: 0;
+      padding: 5px 0;
+    }
+    p {
+      margin: 0;
+      padding-top: 5px;
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+  }
+}
+</style>
