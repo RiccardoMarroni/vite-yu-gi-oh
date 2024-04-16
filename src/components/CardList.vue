@@ -1,7 +1,6 @@
 <template>
     <div class="container">
       <div class="header-cards">
-        <h6>Found {{ storage.cards.length }} cards</h6>
       </div>
       <div class="row">
         <div
@@ -20,7 +19,7 @@
   </template>
   
   <script>
-   import { storage } from "./data/storage.js";     //non legge l'import
+   import { storage } from "../data/storage.js";     
   import CardComponent from "./CardComponent.vue";
   export default {
     name: "CardList",
@@ -37,19 +36,9 @@
   
   <style lang="scss" scoped>
   @use "../assets/styles/partials/variables" as *;
-  
+    
   .container {
     padding: 50px;
-    .header-cards {
-      background-color: $secondarycolor;
-      color: $thirdcolor;
-      padding: 20px;
-      width: 100%;
-      
-      h6 {
-        margin: 0;
-        font-weight: bold;
-      }
     }
-  }
+  
   </style>
